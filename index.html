@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alemão Runner - Gerador de Planilhas de Corrida</title>
+
     <!-- Meta Tags para Compartilhamento Bonito no WhatsApp / Redes Sociais -->
     <meta property="og:title" content="Alemão Runner | Gerador de Planilhas de Corrida">
-    <meta property="og:description" content="Gere sua planilha de 5km ou 10km personalizada com metas de pace e treinos estruturados. Evolua com segurança!">
+    <meta property="og:description" content="Crie seu treino personalizado para 5km ou 10km em segundos com metas de pace e progressão segura!">
     <meta property="og:image" content="https://i.imgur.com/0twfhaF.jpeg">
     <meta property="og:url" content="https://ccg-web.github.io/planilhas-alemao-runner/">
     <meta property="og:type" content="website">
-    <title>Alemão Runner - Gerador de Planilhas</title>
+
     <style>
         /* === ESTILOS GERAIS === */
         :root {
@@ -94,6 +96,11 @@
 
         .print-btn { background-color: #27ae60; border-color: #2ecc71; color: white; display: none; }
         .print-btn:hover { background-color: #2ecc71; color: white; }
+
+        .pix-container {
+            margin-top: 25px; padding-top: 15px; border-top: 1px dashed #ccc; text-align: center;
+            font-size: 0.9em; color: #555;
+        }
 
         /* === ESTILOS DA PLANILHA BASE === */
         #planilha-output { display: none; background: #fff; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-radius: 8px; }
@@ -198,7 +205,7 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label>Seu Nome</label>
-                        <input type="text" id="atletaName" required placeholder="Ex: alemão runner">
+                        <input type="text" id="atletaName" required placeholder="Ex: João da Silva">
                     </div>
                     <div class="form-group">
                         <label>Seu Telefone/Instagram</label>
@@ -389,7 +396,6 @@
 
             // Lógica de Bloqueio se for Premium
             if (isPremium) {
-                // SEU NÚMERO ATUALIZADO AQUI
                 const meuWhatsApp = "5588997041286"; 
                 const msgZap = encodeURIComponent(`Fala, Alemão Runner! Acabei de gerar minha prévia da Planilha Premium de ${distancia}. Meu tempo atual é ${atualStr} e o alvo é ${alvoStr}. Como faço o Pix de R$25,00 para você me enviar o PDF completo liberado?`);
                 const linkZap = `https://wa.me/${meuWhatsApp}?text=${msgZap}`;
@@ -428,7 +434,7 @@
                     });
                     html += `</tbody></table></div>`;
                 }
-                html += `</div></div>`; // Fim blurred e container
+                html += `</div></div>`; 
             }
 
             const outputDiv = document.getElementById('planilha-output');
